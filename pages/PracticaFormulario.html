@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- MetaData-->
+<!-- Página principal de las practicas-->
+<!-- ================ metadatos================== -->
+	<meta charset="utf-8"><!-- La escritura de caracteres especiales áéíóú ñ-->
+	<meta name="description" content="practicas-- html,css,controles,formulario"><!-- -->
+	<meta name="keywords" content="HTM, CSS, JavaScript, Imagen"><!-- -->
+	<meta name="author" content="Enmanuel"><!-- -->
+	<!-- <meta http-equiv="refresh" content="10"><!-- -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ================ Título e Iconos================== -->
+	<!--Todas las paginas que desarrollemos en practica deberan tener titlo e iconos.-->
+	<title>Practica Formulario Enmanuel Ochoa</title>
+	<link rel="icon" href="../img/icon/GodEye.ico" type="image/x-icon">
+	<!-- <link rel="stylesheet" href="../css/style_reset.css"> -->
+	<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+<hr>
+
+<fieldset>
+<legend>Practica Formulario en HTML</legend>
+
+<form  class="Campos">
+<!-- Selector de fecha -->
+<label for="date">Fecha actual:</label>
+<input type="date" id="date" name="date"><br><br>
+
+<!-- Campo de texto de una sola línea -->
+<label for="text">Nombre:</label>
+<input type="text" name="text" placeholder="Ingrese texto aquí"><br><br>
+
+<!-- Campo de texto de una sola línea -->
+<label for="text">Apellido:</label>
+<input type="text" name="text" placeholder="Ingrese texto aquí"><br><br>
+
+<!-- Campo para ingresar correo electrónico con validación -->
+<label for="email">Correo:</label>
+<input type="email" name="email" placeholder="nombre@dominio.com"><br><br>
+
+<!-- Campo para números telefónicos -->
+<label for="tel">Tel:</label>
+<input type="tel" name="tel" placeholder="+593"><br><br>
+
+<!-- Campo oculto:
+     No es visible para el usuario pero envía datos al servidor -->
+<input type="hidden" name="hidden" value="valor_oculto">
+
+<!-- Radio buttons:
+     Permiten seleccionar solo una opción -->
+<fieldset>
+<legend>Sexo </legend>
+
+<!-- Opción única seleccionable -->
+<label><input type="radio" name="opcion" value="r1"> Hombre</label><br>
+
+<!-- Opción única seleccionable -->
+<label><input type="radio" name="opcion" value="r2"> Mujer</label><br>
+
+<!-- Opción única seleccionable -->
+<label><input type="radio" name="opcion" value="r3"> Otro</label><br>
+
+</fieldset><br>
+
+<!-- Botón para limpiar todos los campos del formulario -->
+<input type="reset" value="Limpiar formulario"><br><br>
+
+<!-- Botón para enviar los datos del formulario -->
+<input type="submit" value="Enviar datos"><br><br>
+
+</form>
+</fieldset>
+
+
+<hr>
+<!-- ================ Pie de página ================== -->
+<footer>
+<p>Desarrollado por: Enmanuel Ochoa</p>
+<p>
+<a href="mailto:enmopere@espol.edu.ec">Correo: enmopere@espol.edu.ec</a>
+<a href="tel:+593968785469">Celular: +593968785469</a>
+</p>
+<p> © 2026 - Página de practicas académicas ESPOL</p>
+</footer>
+</body>
+
+

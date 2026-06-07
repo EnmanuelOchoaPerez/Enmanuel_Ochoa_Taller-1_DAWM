@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- MetaData-->
+<!-- Página principal de las practicas-->
+<!-- ================ metadatos================== -->
+	<meta charset="utf-8"><!-- La escritura de caracteres especiales áéíóú ñ-->
+	<meta name="description" content="practicas-- html,css,controles"><!-- -->
+	<meta name="keywords" content="HTM, CSS, JavaScript, Imagen"><!-- -->
+	<meta name="author" content="Enmanuel"><!-- -->
+	<!-- <meta http-equiv="refresh" content="10"><!-- -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ================ Título e Iconos================== -->
+	<!--Todas las paginas que desarrollemos en practica deberan tener titlo e iconos.-->
+	<title>Practica JavaScript Enmanuel Ochoa</title>
+	<!-- <link rel="icon" href="../img/icon/GodEye.ico" type="image/x-icon"> -->
+	<link rel="stylesheet" href="../css/styleJs.css">
+</head>
+
+
+<body>
+<!-- Título principal de la página -->
+<h1>Registro de venta - Bar Café Xelula</h1>
+
+<!-- Sección de ingreso de datos del producto -->
+<h2>Datos del producto</h2>
+
+<!-- Campo para escribir el nombre del producto -->
+<label for="producto">Nombre del producto:</label>
+<input type="text" id="producto" placeholder="Ejemplo: Capuchino">
+
+<!-- Muestra en tiempo real el nombre del producto ingresado -->
+<p>
+    Producto escrito:
+    <span id="vistaProducto">Ninguno</span>
+</p>
+
+<br>
+
+<!-- Lista desplegable para seleccionar la categoría del producto -->
+<label for="categoria">Categoría:</label>
+<select id="categoria">
+
+    <!-- Opción por defecto -->
+    <option value="">Seleccione una categoría</option>
+
+    <!-- Categorías disponibles -->
+    <option value="Café">Café</option>
+    <option value="Bebida fría">Bebida fría</option>
+    <option value="Postre">Postre</option>
+    <option value="Snack">Snack</option>
+
+</select>
+
+<br><br>
+
+<!-- Campo para ingresar el precio unitario -->
+<label for="precio">Precio unitario:</label>
+<input type="number" id="precio" placeholder="Ejemplo: 2.50">
+
+<br><br>
+
+<!-- Campo para ingresar la cantidad de productos vendidos -->
+<label for="cantidad">Cantidad:</label>
+<input type="number" id="cantidad" placeholder="Ejemplo: 3">
+
+<br><br>
+
+<!-- Casilla para aplicar un descuento del 10% -->
+<label for="descuento">Aplicar descuento del 10%:</label>
+<input type="checkbox" id="descuento">
+
+<br><br>
+
+<!-- Botón que ejecutará el cálculo de la venta -->
+<button id="btnCalcular">Calcular venta</button>
+
+<!-- Botón que limpiará todos los campos y resultados -->
+<button id="btnLimpiar">Limpiar</button>
+
+<!-- Sección donde se mostrarán los resultados -->
+<h2>Resultado</h2>
+
+<!-- Mensaje informativo para el usuario -->
+<p id="mensaje">
+    Ingrese los datos y calcule la venta.
+</p>
+
+<!-- Muestra el nombre del producto calculado -->
+<p>
+    Producto:
+    <span id="resultadoProducto">---</span>
+</p>
+
+<!-- Muestra la categoría seleccionada -->
+<p>
+    Categoría:
+    <span id="resultadoCategoria">---</span>
+</p>
+
+<!-- Muestra el subtotal (precio × cantidad) -->
+<p>
+    Subtotal: $
+    <span id="resultadoSubtotal">0.00</span>
+</p>
+
+<!-- Muestra el valor descontado -->
+<p>
+    Descuento: $
+    <span id="resultadoDescuento">0.00</span>
+</p>
+
+<!-- Muestra el total final a pagar -->
+<p>
+    Total a pagar: $
+    <span id="resultadoTotal">0.00</span>
+</p>
+
+<hr>
+<!-- ================ Pie de página ================== -->
+<footer>
+<p>Desarrollado por: Enmanuel Ochoa</p>
+<p>
+<a href="mailto:enmopere@espol.edu.ec">Correo: enmopere@espol.edu.ec</a>
+<a href="tel:+593968785469">Celular: +593968785469</a>
+</p>
+<p> © 2026 - Página de practicas académicas ESPOL</p>
+</footer>
+</body>

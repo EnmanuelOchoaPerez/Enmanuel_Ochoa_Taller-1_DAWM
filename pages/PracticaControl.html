@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- MetaData-->
+<!-- Página principal de las practicas-->
+<!-- ================ metadatos================== -->
+	<meta charset="utf-8"><!-- La escritura de caracteres especiales áéíóú ñ-->
+	<meta name="description" content="practicas-- html,css,controles"><!-- -->
+	<meta name="keywords" content="HTM, CSS, JavaScript, Imagen"><!-- -->
+	<meta name="author" content="Enmanuel"><!-- -->
+	<!-- <meta http-equiv="refresh" content="10"><!-- -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ================ Título e Iconos================== -->
+	<!--Todas las paginas que desarrollemos en practica deberan tener titlo e iconos.-->
+	<title>Practica Control Enmanuel Ochoa</title>
+	<link rel="icon" href="../img/icon/GodEye.ico" type="image/x-icon">
+</head>
+<body>
+<hr>
+<fieldset>
+<legend>Controles de Formulario en HTML</legend>
+
+<form>
+
+<!-- Botón:
+     Crea un botón clickeable que puede ejecutar acciones con JavaScript -->
+<label for="btn">Botón:</label>
+<input type="button" value="Click aquí" name="btn"><br><br>
+
+<!-- Checkbox: permite seleccionar varias opciones al mismo tiempo -->
+<fieldset>
+<legend>Checkbox (selección múltiple)</legend>
+
+<!-- Checkbox individual de opción múltiple -->
+<label><input type="checkbox" name="estado" value="op1"> Opción 1</label><br>
+
+<!-- Checkbox individual de opción múltiple -->
+<label><input type="checkbox" name="estado" value="op2"> Opción 2</label><br>
+
+<!-- Checkbox individual de opción múltiple -->
+<label><input type="checkbox" name="estado" value="op3"> Opción 3</label><br>
+
+</fieldset><br>
+
+<!-- Selector de color:
+     Permite elegir un color desde una paleta -->
+<label for="color">Color:</label>
+<input type="color" name="color"><br><br>
+
+<!-- Selector de fecha -->
+<label for="date">Date:</label>
+<input type="date" id="date" name="date"><br><br>
+
+<!-- Selector de fecha y hora local -->
+<label for="datetime-local">Datetime-local:</label>
+<input type="datetime-local" name="datetime-local"><br><br>
+
+<!-- Selector de mes y año -->
+<label for="month">Month:</label>
+<input type="month" name="month"><br><br>
+
+<!-- Selector de semana del año -->
+<label for="week">Week:</label>
+<input type="week" name="week"><br><br>
+
+<!-- Selector de hora -->
+<label for="time">Time:</label>
+<input type="time" name="time"><br><br>
+
+<!-- Campo para ingresar correo electrónico con validación -->
+<label for="email">Email:</label>
+<input type="email" name="email" placeholder="nombre@dominio.com"><br><br>
+
+<!-- Permite subir archivos desde el dispositivo -->
+<label for="file">File:</label>
+<input type="file" name="file"><br><br>
+
+<!-- Campo oculto:
+     No es visible para el usuario pero envía datos al servidor -->
+<input type="hidden" name="hidden" value="valor_oculto">
+
+<!-- Imagen usada como botón de envío -->
+<label for="image">Image (como botón):</label>
+<input type="image" src="../Img/Producto.png" alt="Enviar" width="50" height="50"><br><br>
+
+<!-- Campo numérico con límites y saltos definidos -->
+<label for="number">Number:</label>
+<input type="number" name="number" min="0" max="100" step="5"><br><br>
+
+<!-- Campo para contraseñas:
+     Oculta los caracteres escritos -->
+<label for="password">Password:</label>
+<input type="password" name="password"><br><br>
+
+<!-- Radio buttons:
+     Permiten seleccionar solo una opción -->
+<fieldset>
+<legend>Radio (selección única)</legend>
+
+<!-- Opción única seleccionable -->
+<label><input type="radio" name="opcion" value="r1"> Radio 1</label><br>
+
+<!-- Opción única seleccionable -->
+<label><input type="radio" name="opcion" value="r2"> Radio 2</label><br>
+
+<!-- Opción única seleccionable -->
+<label><input type="radio" name="opcion" value="r3"> Radio 3</label><br>
+
+</fieldset><br>
+
+<!-- Control deslizante para seleccionar un valor -->
+<label for="range">Range:</label>
+<input type="range" name="range" min="0" max="100"><br><br>
+
+<!-- Botón para limpiar todos los campos del formulario -->
+<input type="reset" value="Limpiar formulario"><br><br>
+
+<!-- Campo de búsqueda -->
+<label for="search">Search:</label>
+<input type="search" name="search" placeholder="Buscar..."><br><br>
+
+<!-- Botón para enviar los datos del formulario -->
+<input type="submit" value="Enviar datos"><br><br>
+
+<!-- Campo para números telefónicos -->
+<label for="tel">Tel:</label>
+<input type="tel" name="tel" placeholder="+593"><br><br>
+
+<!-- Campo de texto de una sola línea -->
+<label for="text">Text:</label>
+<input type="text" name="text" placeholder="Ingrese texto aquí"><br><br>
+
+<!-- Campo para ingresar direcciones web -->
+<label for="url">URL:</label>
+<input type="url" name="url" placeholder="https://..."><br><br>
+
+<!-- Lista desplegable de opciones -->
+<label for="select">Select (lista desplegable):</label>
+<select name="select">
+
+<!-- Opción seleccionable del menú -->
+<option value="Valor 1">Valor 1</option>
+
+<!-- Opción seleccionable del menú -->
+<option value="Valor 2">Valor 2</option>
+
+<!-- Opción seleccionable del menú -->
+<option value="Valor 3">Valor 3</option>
+
+</select>
+
+<br><br>
+
+<!-- Área de texto multilínea -->
+<label for="textarea">Textarea (multilínea):</label><br>
+<textarea name="textarea" rows="4" cols="40" placeholder="Escriba un texto largo..."></textarea><br><br>
+
+<!-- Campo con sugerencias automáticas -->
+<label for="datalist">Datalist (lista sugerida):</label>
+<input list="opciones" name="datalist">
+
+<!-- Lista de opciones sugeridas -->
+<datalist id="opciones">
+<option value="HTML">
+<option value="CSS">
+<option value="JavaScript">
+<option value="Python">
+</datalist><br><br>
+
+<!-- Barra de progreso:
+     Muestra el avance de una tarea -->
+<label for="progress">Progress (progreso):</label>
+<progress value="70" max="100"></progress><br><br>
+
+<!-- Medidor:
+     Representa un valor dentro de un rango -->
+<label for="meter">Meter (medidor):</label>
+<meter value="0.7" min="0" max="1">70%</meter><br><br>
+
+</form>
+</fieldset>
+
+<hr>
+<!-- ================ Pie de página ================== -->
+<footer>
+<p>Desarrollado por: Enmanuel Ochoa</p>
+<p>
+<a href="mailto:enmopere@espol.edu.ec">Correo: enmopere@espol.edu.ec</a>
+<a href="tel:+593968785469">Celular: +593968785469</a>
+</p>
+<p> © 2026 - Página de practicas académicas ESPOL</p>
+</footer>
+</body>

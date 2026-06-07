@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- MetaData-->
+<!-- Página principal de las practicas-->
+<!-- ================ metadatos================== -->
+	<meta charset="utf-8"><!-- La escritura de caracteres especiales áéíóú ñ-->
+	<meta name="description" content="practicas-- html,css,ja"><!-- -->
+	<meta name="keywords" content="HTM, CSS, JavaScript, Imagen"><!-- -->
+	<meta name="author" content="Enmanuel"><!-- -->
+	<!-- <meta http-equiv="refresh" content="10"><!-- -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ================ Título e Iconos================== -->
+	<!--Todas las paginas que desarrollemos en practica deberan tener titlo e iconos.-->
+	<title>Practicas Imagenes Enmanuel Ochoa</title>
+	<link rel="icon" href="../img/icon/GodEye.ico" type="image/x-icon">
+</head>
+<body>
+<!--Mostrar imagen-->
+	<img src = "../img/Cloud.png" alt="Red de computadoras" usemap="#NubeComputadora">
+<!-- ================ Mapeo de Imagenes ================== -->
+<map name="NubeComputadora">
+  
+  <area shape="poly" alt="Router" coords="260,185,340,185,340,255,260,255" 
+href="">
+
+  <area shape="poly" alt="Computadora de escritorio" coords="414,54,478,85,513,66,546,85,539,207,478,224,348,135,397,115,411,52" 
+href="..\Pages\Nube\Pc.html">
+
+  <area shape="poly" alt="Torre grande de servidor" coords="660,15,860,15,860,260,660,260" 
+href="">
+
+  <area shape="poly" alt="Computadora de escritorio 2" coords="820,330,950,330,950,470,820,470" 
+href="">
+
+  <area shape="poly" alt="Black Berry" coords="770,590,920,590,920,740,770,740" 
+href="">
+
+  <area shape="poly" alt="Laptop" coords="450,720,580,720,620,850,420,850" 
+href="">
+
+  <area shape="poly" alt="Celular" coords="20,660,180,660,180,810,20,810" 
+href="">
+
+  <area shape="poly" alt="Torre pequeña de servidor" coords="100,320,220,320,220,450,100,450"
+href="">
+
+</map>
+<hr>
+
+<!--Imagen responsiva-->
+<h3>Imagen Responsiva</h3>
+<picture>
+	<source media="(min-width: 800px)" srcset="../img/Hacker_all.png">
+	<source media="(min-width: 780px)" srcset="../img/Hacker.png">
+	<source media="(min-width: 650px)" srcset="../img/Hacker_650.png">
+	<source media="(min-width: 450px)" srcset="../img/Hacker_450.png">
+	<source media="(min-width: 300px)" srcset="../img/Hacker_300.png">
+	
+	<img src="../img/Hacker_100.png" alt="Hacking"/>
+</picture>
+
+<!--Imagen desde la web-->
+<hr>
+<h3>Imagen desde la web</h3>
+<img src="https://www.vecteezy.com/free-photos/hacker"/>  
+<!-- ================ Pie de página ================== -->
+<footer>
+<hr>
+<p>Desarrollado por: Enmanuel Ochoa</p>
+<p>
+<a href="mailto:enmopere@espol.edu.ec">Correo: enmopere@espol.edu.ec</a>
+<a href="tel:+593968785469">Celular: +593968785469</a>
+</p>
+<p> © 2026 - Página de practicas académicas ESPOL</p>
+</footer>
+</body>
+</html>

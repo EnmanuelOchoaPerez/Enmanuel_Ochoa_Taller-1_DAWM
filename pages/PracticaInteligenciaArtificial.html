@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- MetaData-->
+<!-- Página principal de las practicas-->
+<!-- ================ metadatos================== -->
+	<meta charset="utf-8"><!-- La escritura de caracteres especiales áéíóú ñ-->
+	<meta name="description" content="practicas-- html,css,controles"><!-- -->
+	<meta name="keywords" content="HTM, CSS, JavaScript, Imagen"><!-- -->
+	<meta name="author" content="Enmanuel"><!-- -->
+	<!-- <meta http-equiv="refresh" content="10 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ================ Título e Iconos================== -->
+	<!--Todas las paginas que desarrollemos en practica deberan tener titlo e iconos.-->
+    <title>Practia Inteligencia Artificial Enmanuel Ochoa:  Gran Rifa Interactiva</title>
+    <!-- La IA se lo avienta todo al mismo documento.-->
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --available-color: #10b981;
+            --selected-color: #f59e0b;
+            --sold-color: #ef4444;
+            --background-color: #f3f4f6;
+            --card-background: #ffffff;
+            --text-color: #1f2937;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--card-background);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Leyenda de estados */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .box-sample {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+        }
+
+        /* Cuadrícula de números */
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            gap: 10px;
+            background: var(--card-background);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .number-node {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+            border: 2px solid transparent;
+        }
+
+        /* Clases de estado */
+        .available {
+            background-color: #e6f4ea;
+            color: var(--available-color);
+            border-color: var(--available-color);
+        }
+
+        .available:hover {
+            background-color: var(--available-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .selected {
+            background-color: var(--selected-color);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+
+        .sold {
+            background-color: #fee2e2;
+            color: var(--sold-color);
+            border-color: var(--sold-color);
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        /* Barra fija inferior de resumen */
+        .checkout-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-background);
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .checkout-info p {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .checkout-info span {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .btn-reserve {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-reserve:hover {
+            background-color: #4338ca;
+        }
+
+        .btn-reserve:disabled {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        /* Margen extra al final para que la barra no tape los números */
+        .spacer {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🎟️ Gran Rifa de Fin de Año 🎟️</h1>
+        <p>Selecciona los números que deseas comprar. ¡Buena suerte!</p>
+    </header>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="box-sample available" style="border: 2px solid var(--available-color)"></div>
+            <span>Disponible</span>
+        </div>
+        <div class="legend-item">
+            <div class="box-sample selected"></div>
+            <span>Seleccionado</span>
+        </div>
+        <div class="legend-item">
+            <div class="box-sample sold" style="border: 2px solid var(--sold-color)"></div>
+            <span>Vendido</span>
+        </div>
+    </div>
+
+    <div class="numbers-grid" id="grid-container"></div>
+
+    <div class="spacer"></div>
+</div>
+
+<div class="checkout-bar">
+    <div class="checkout-info">
+        <p>Números seleccionados: <span id="selected-count">0</span></p>
+        <p>Tus números: <span id="selected-list">Ninguno</span></p>
+    </div>
+    <button class="btn-reserve" id="btn-submit" disabled>Reservar Números</button>
+</div>
+
+<script>
+    const TOTAL_NUMBERS = 1000;
+    const gridContainer = document.getElementById('grid-container');
+    const selectedCountEl = document.getElementById('selected-count');
+    const selectedListEl = document.getElementById('selected-list');
+    const btnSubmit = document.getElementById('btn-submit');
+
+    let selectedNumbers = [];
+
+    // --- Simulación de números ya vendidos ---
+    // En un entorno real, estos números vendrían de una Base de Datos.
+    // Aquí bloquearemos algunos números de ejemplo de manera aleatoria.
+    const soldNumbers = new Set();
+
+    // --- Generación de los 1000 números ---
+    for (let i = 1; i <= TOTAL_NUMBERS; i++) {
+        // Formatear número con ceros a la izquierda (ej: 0001, 0025, 0350, 1000)
+        const formattedNumber = String(i).padStart(4, '0');
+        
+        const numberBox = document.createElement('div');
+        numberBox.classList.add('number-node');
+        numberBox.innerText = formattedNumber;
+
+        if (soldNumbers.has(i)) {
+            numberBox.classList.add('sold');
+        } else {
+            numberBox.classList.add('available');
+            // Evento de clic para seleccionar/deseleccionar
+            numberBox.addEventListener('click', () => toggleNumber(formattedNumber, numberBox));
+        }
+
+        gridContainer.appendChild(numberBox);
+    }
+
+    // --- Lógica de selección ---
+    function toggleNumber(number, element) {
+        if (selectedNumbers.includes(number)) {
+            // Deseleccionar
+            selectedNumbers = selectedNumbers.filter(n => n !== number);
+            element.classList.remove('selected');
+            element.classList.add('available');
+        } else {
+            // Seleccionar
+            selectedNumbers.push(number);
+            element.classList.remove('available');
+            element.classList.add('selected');
+        }
+        
+        // Ordenar la lista para mostrarla bonita
+        selectedNumbers.sort();
+        updateCheckoutBar();
+    }
+
+    // --- Actualizar Interfaz Inferior ---
+    function updateCheckoutBar() {
+        selectedCountEl.innerText = selectedNumbers.length;
+        
+        if (selectedNumbers.length > 0) {
+            selectedListEl.innerText = selectedNumbers.join(', ');
+            btnSubmit.disabled = false;
+        } else {
+            selectedListEl.innerText = "Ninguno";
+            btnSubmit.disabled = true;
+        }
+    }
+
+    // --- Acción del botón Reservar ---
+    btnSubmit.addEventListener('click', () => {
+        alert(`¡Perfecto! Has reservado los siguientes números:\n${selectedNumbers.join(', ')}\n\nAquí puedes conectar esto con un formulario de WhatsApp o pasarela de pago.`);
+    });
+</script>
+
+<hr>
+<!-- ================ Pie de página ================== -->
+<footer>
+<p>Desarrollado por: Enmanuel Ochoa</p>
+<p>
+<a href="mailto:enmopere@espol.edu.ec">Correo: enmopere@espol.edu.ec</a>
+<a href="tel:+593968785469">Celular: +593968785469</a>
+</p>
+<p> © 2026 - Página de practicas académicas ESPOL</p>
+</footer>
+</body>
+</html>
