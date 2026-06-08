@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- MetaData-->
+<!-- Página principal de las practicas-->
+<!-- ================ metadatos================== -->
+	<meta charset="utf-8"><!-- La escritura de caracteres especiales áéíóú ñ-->
+	<meta name="description" content="practicas-- html,css,ja"><!-- -->
+	<meta name="keywords" content="HTM, CSS, JavaScript, Indice"><!-- -->
+	<meta name="author" content="Xelula"><!-- -->
+	<meta http-equiv="refresh" content="10"><!-- -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ================ Título e Iconos================== -->
+	<!--Todas las paginas que desarrollemos en practica deberan tener titlo e iconos.-->
+	<title>Practicas Enmanuel Ochoa: Indice</title>
+	<link rel="icon" href="../img/Icon/brsrk.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styleCss.css">
+</head>
+<body>
+
+    <header>
+        <h1>Fundamentos de CSS</h1>
+        <p>Hojas de Estilo en Cascada: La capa de presentación de la Web.</p>
+    </header>
+
+    <main>
+        <section id="que-es-css">
+            <h2>1. ¿Qué es CSS y para qué sirve?</h2>
+            <p><strong>CSS (Cascading Style Sheets)</strong> es un lenguaje de diseño gráfico utilizado para describir la presentación de un documento escrito en un lenguaje de marcado (como HTML).</p>
+            <p><strong>¿Para qué sirve?</strong> Su propósito principal es separar el contenido de la estructura (HTML) del diseño visual (CSS). Permite controlar colores, fuentes, espaciados, tamaños, disposición (layout) y la adaptación del diseño a diferentes tamaños de pantalla (diseño responsivo).</p>
+        </section>
+
+        <section id="anatomia-regla">
+            <h2>2. Anatomía de una Regla CSS</h2>
+            <p>El código CSS se compone de "reglas". Una regla CSS dicta cómo se debe ver un elemento específico.</p>
+            <div class="codigo-ejemplo">
+<pre><code>selector {
+    propiedad: valor;
+}</code></pre>
+            </div>
+            <ul>
+                <li><strong>Selector:</strong> Es el patrón que le indica al navegador a qué elemento(s) HTML se le aplicará el estilo.</li>
+                <li><strong>Propiedad:</strong> Es la característica específica del elemento que queremos modificar (ej. <code>color</code>, <code>font-size</code>, <code>margin</code>).</li>
+                <li><strong>Valor:</strong> Es el estado o medida que le asignamos a esa propiedad (ej. <code>red</code>, <code>16px</code>, <code>auto</code>).</li>
+            </ul>
+        </section>
+
+        <section id="formas-insercion">
+            <h2>3. Formas de insertar CSS</h2>
+            <p>Existen tres métodos principales para aplicar CSS a un documento HTML:</p>
+            
+            <h3>A. CSS en línea (Inline)</h3>
+            <p>Se aplica directamente en la etiqueta HTML usando el atributo <code>style</code>. No se recomienda para uso general porque mezcla contenido con diseño.</p>
+            <pre><code>&lt;h1 style="color: blue;"&gt;Título Azul&lt;/h1&gt;</code></pre>
+
+            <h3>B. CSS Interno</h3>
+            <p>Se coloca dentro de la etiqueta <code>&lt;style&gt;</code> en la sección <code>&lt;head&gt;</code> del documento HTML. Útil para páginas únicas de estilo particular.</p>
+            <pre><code>&lt;head&gt;
+  &lt;style&gt;
+    p { color: green; }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+
+            <h3>C. CSS Externo</h3>
+            <p>Es la mejor práctica. Se escribe el código en un archivo independiente con extensión <code>.css</code> y se vincula al HTML mediante la etiqueta <code>&lt;link&gt;</code> en el <code>&lt;head&gt;</code>.</p>
+            <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+        </section>
+
+        <section id="tipos-selectores">
+            <h2>4. Tipos de Selectores Principales</h2>
+            <p>Los selectores permiten apuntar a los elementos con gran precisión.</p>
+
+            <div class="selector-grid">
+                <div class="selector-card">
+                    <h4>Selector Universal (<code>*</code>)</h4>
+                    <p>Aplica a todos los elementos de la página.</p>
+                    <pre><code>* { margin: 0; }</code></pre>
+                </div>
+
+                <div class="selector-card">
+                    <h4>Selector de Etiqueta</h4>
+                    <p>Apunta a todos los elementos de un tipo específico.</p>
+                    <pre><code>p { font-size: 16px; }</code></pre>
+                </div>
+
+                <div class="selector-card">
+                    <h4>Selector de Clase (<code>.</code>)</h4>
+                    <p>Apunta a elementos con un atributo <code>class</code> específico. Es reutilizable.</p>
+                    <pre><code>.destacado { font-weight: bold; }</code></pre>
+                </div>
+
+                <div class="selector-card">
+                    <h4>Selector de ID (<code>#</code>)</h4>
+                    <p>Apunta a un elemento con un <code>id</code> único. No debe repetirse en la página.</p>
+                    <pre><code>#cabecera { background: gray; }</code></pre>
+                </div>
+
+                <div class="selector-card">
+                    <h4>Selector Agrupado (<code>,</code>)</h4>
+                    <p>Aplica la misma regla a varios selectores distintos separados por coma.</p>
+                    <pre><code>h1, h2, h3 { color: navy; }</code></pre>
+                </div>
+
+                <div class="selector-card">
+                    <h4>Selector Descendente ( )</h4>
+                    <p>Apunta a elementos que están dentro de otro (sin importar la profundidad).</p>
+                    <pre><code>div p { color: red; } /* P dentro de un DIV */</code></pre>
+                </div>
+
+                <div class="selector-card">
+                    <h4>Selector Hijo Directo (<code>&gt;</code>)</h4>
+                    <p>Apunta solo a los elementos que son hijos inmediatos de otro.</p>
+                    <pre><code>ul &gt; li { list-style: none; }</code></pre>
+                </div>
+
+                <div class="selector-card">
+                    <h4>Selector de Atributo (<code>[]</code>)</h4>
+                    <p>Apunta a elementos que posean un atributo específico.</p>
+                    <pre><code>input[type="text"] { border: 1px solid black; }</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<!-- ================ Pie de página ================== -->
+<footer>
+<hr>
+<p>Desarrollado por: Enmanuel Ochoa</p>
+<p>
+<a href="mailto:enmopere@espol.edu.ec">Correo: enmopere@espol.edu.ec</a>
+<a href="tel:+593968785469">Celular: +593968785469</a>
+</p>
+<p> © 2026 - Página de practicas académicas ESPOL</p>
+</footer>
+</body>
+</html>
